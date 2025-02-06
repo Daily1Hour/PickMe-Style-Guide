@@ -1,0 +1,5 @@
+[init]
+    defaultBranch = styleguide
+
+[commit]
+    template = .gitmessage
