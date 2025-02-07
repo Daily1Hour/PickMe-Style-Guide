@@ -1,6 +1,6 @@
-# 스타일가이드
+# 스타일가이드 HOST 사용법
 
-## HOST 사용법
+## 스타일시트
 
 ### EJS
 
@@ -57,4 +57,27 @@ export default defineConfig({
 
 // index.js
 import("remoteApp/GlobalStyles");
+```
+
+## 컴포넌트
+
+```js
+// vite.config.js
+import { defineConfig } from "vite";
+import federation from "@originjs/vite-plugin-federation";
+
+export default defineConfig({
+    plugins: [
+        federation({
+            name: "host-app",
+            remotes: {
+                remoteApp: "http://localhost:9001/pickme-style-guide.js",
+            },
+            shared: ["react", "react-dom", "@chakra-ui/react"],
+        }),
+    ],
+});
+
+// index.js
+import Button from "remoteApp/Button";
 ```
