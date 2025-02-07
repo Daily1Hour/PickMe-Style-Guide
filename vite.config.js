@@ -13,6 +13,7 @@ export default defineConfig({
                 "./GlobalStyles": "./src/pickme-style-guide", // 글로벌 스타일
                 "./Button": "./src/react-components/Button",
             },
+            shared: ["react", "react-dom", "@chakra-ui/react"],
         }),
     ],
     build: {
