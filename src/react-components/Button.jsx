@@ -1,6 +1,6 @@
 import { chakra, Button } from "@chakra-ui/react";
 
-const PmButton = chakra(Button, {
+export default chakra(Button, {
     base: {
         colorPalette: "pickme",
         borderRadius: "lg",
@@ -9,5 +9,3 @@ const PmButton = chakra(Button, {
         },
     },
 });
-
-export default PmButton;
