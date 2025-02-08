@@ -8,5 +8,8 @@
         "vite.config.*": "vite.*.config.ts, jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*, vite-env.d.ts",
         "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*"
     },
-    "cSpell.words": ["pickme"]
+    "cSpell.words": [
+        "pickme",
+        "styleguide"
+    ]
 }
