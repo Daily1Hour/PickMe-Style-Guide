@@ -21,7 +21,9 @@ export default defineConfig({
         modulePreload: false,
         assetsDir: "", // 루트로 저장
         target: "esnext",
-        minify: false,
+        minify: true,
+        cssMinify: true,
         cssCodeSplit: false,
+        emptyOutDir: true,
     },
 });
