@@ -1,5 +1,6 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { MdMenu } from "react-icons/md";
+import { Box, HStack } from "@chakra-ui/react";
 import {
     DrawerRoot,
     DrawerActionTrigger,
@@ -18,6 +19,14 @@ export const DrawerBody = ({ children }) => <>{children}</>;
 
 export const DrawerFooter = ({ children }) => <>{children}</>;
 
+const MenuTrigger = forwardRef((props, ref) => (
+    <Box position="fixed" m="16px">
+        <IconButton ref={ref} {...props}>
+            <MdMenu />
+        </IconButton>
+    </Box>
+));
+
 export function DrawerLayout({ children }) {
     // 슬롯 구분
     const childrenArray = React.Children.toArray(children);
@@ -27,19 +36,18 @@ export function DrawerLayout({ children }) {
 
     return (
         <DrawerRoot placement="start" size="xs">
-            <DrawerTrigger asChild position="fixed" m="16px">
-                <IconButton>
-                    <MdMenu />
-                </IconButton>
+            <DrawerTrigger asChild>
+                <MenuTrigger />
             </DrawerTrigger>
+
             <DrawerContent minHeight="100vh" w="250px">
-                <DrawerActionTrigger asChild position="fixed" m="16px">
-                    <IconButton>
-                        <MdMenu />
-                    </IconButton>
+                <DrawerActionTrigger asChild>
+                    <MenuTrigger />
                 </DrawerActionTrigger>
 
-                <ChakraDrawerHeader>{header}</ChakraDrawerHeader>
+                <ChakraDrawerHeader p="16px">
+                    <HStack justify="center">{header}</HStack>
+                </ChakraDrawerHeader>
 
                 <ChakraDrawerBody>{body}</ChakraDrawerBody>
 
