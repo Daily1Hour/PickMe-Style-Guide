@@ -3,11 +3,13 @@ declare module "@styleguide/global" {
 }
 
 declare module "@styleguide/react" {
-    import { SystemContext, ButtonProps } from "@chakra-ui/react";
+    import { SystemContext, ButtonProps, IconButtonProps } from "@chakra-ui/react";
 
     const chakraUiSystem: SystemContext;
 
     const Button: React.FC<ButtonProps>;
+
+    const IconButton: React.FC<IconButtonProps>;
 
     const List: React.FC<{
         children: React.ReactNode;
@@ -15,5 +17,5 @@ declare module "@styleguide/react" {
         separator?: boolean;
     }>;
 
-    export { chakraUiSystem, Button, List };
+    export { chakraUiSystem, Button, IconButton, List };
 }
