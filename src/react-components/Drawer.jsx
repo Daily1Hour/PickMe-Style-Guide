@@ -49,7 +49,7 @@ export function DrawerLayout({ children }) {
                     <HStack justify="center">{header}</HStack>
                 </ChakraDrawerHeader>
 
-                <ChakraDrawerBody>{body}</ChakraDrawerBody>
+                <ChakraDrawerBody p={0}>{body}</ChakraDrawerBody>
 
                 <ChakraDrawerFooter>{footer}</ChakraDrawerFooter>
             </DrawerContent>

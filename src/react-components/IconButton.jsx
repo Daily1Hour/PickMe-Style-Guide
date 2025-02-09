@@ -4,7 +4,7 @@ export default chakra(
     IconButton,
     {
         base: {
-            colorPalette: "pickme",
+            colorPalette: "grey",
             h: "36px",
             py: "4px",
             px: "16px",
