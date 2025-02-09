@@ -1,24 +1,23 @@
 # 스타일가이드 HOST 사용법
 
-## 스타일시트
+## EJS
 
-### EJS
+### 스타일시트
 
 ```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Host</title>
+  <meta http-equiv="Content-Security-Policy" content="style-src 'unsafe-inline' https: localhost:*;">
   <meta name="importmap-type" use-injector />
   
   <% if (isLocal) { %>
     <script type="injector-importmap">
       {
         "imports": {
-          "@pickme/style-guide": "//localhost:9001/pickme-style-guide.js"
+          "@styleguide": "//localhost:9001/pickme-style-guide.js"
         }
       }
     </script>
@@ -29,15 +28,14 @@
 <body>
   <script>
     window.importMapInjector.initPromise.then(() => {
-      import('@pickme/style-guide');
+      import("@styleguide").then(module => module.get("./global"));
     });
   </script>
-  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
 </body>
 </html>
 ```
 
-### Vite
+## Vite
 
 ```js
 // vite.config.js
@@ -49,35 +47,24 @@ export default defineConfig({
         federation({
             name: "host-app",
             remotes: {
-                remoteApp: "http://localhost:9001/pickme-style-guide.js",
-            },
-        }),
-    ],
-});
-
-// index.js
-import("remoteApp/GlobalStyles");
-```
-
-## 컴포넌트
-
-```js
-// vite.config.js
-import { defineConfig } from "vite";
-import federation from "@originjs/vite-plugin-federation";
-
-export default defineConfig({
-    plugins: [
-        federation({
-            name: "host-app",
-            remotes: {
-                remoteApp: "http://localhost:9001/pickme-style-guide.js",
+                "@styleguide": "http://localhost:9001/pickme-style-guide.js",
             },
             shared: ["react", "react-dom", "@chakra-ui/react"],
         }),
     ],
 });
+```
 
+### 스타일시트
+
+```js
 // index.js
-import Button from "remoteApp/Button";
+import("@styleguide/global");
+```
+
+### 컴포넌트
+
+```js
+// page.js
+import { Button, Item } from "@styleguide/react";
 ```
