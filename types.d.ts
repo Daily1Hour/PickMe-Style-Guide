@@ -18,6 +18,18 @@ declare module "@styleguide/react" {
     }>;
 
     const DrawerLayout: React.FC<{ children: React.ReactNode }>;
+    const DrawerHeader: React.FC<{ children: React.ReactNode }>;
+    const DrawerBody: React.FC<{ children: React.ReactNode }>;
+    const DrawerFooter: React.FC<{ children: React.ReactNode }>;
 
-    export { chakraUiSystem, Button, IconButton, List, DrawerLayout };
+    export {
+        chakraUiSystem,
+        Button,
+        IconButton,
+        List,
+        DrawerLayout,
+        DrawerHeader,
+        DrawerBody,
+        DrawerFooter,
+    };
 }
