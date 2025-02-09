@@ -3,7 +3,11 @@ declare module "@styleguide/global" {
 }
 
 declare module "@styleguide/react" {
-    import { SystemContext, ButtonProps, IconButtonProps } from "@chakra-ui/react";
+    import {
+        SystemContext,
+        ButtonProps,
+        IconButtonProps,
+    } from "@chakra-ui/react";
 
     const chakraUiSystem: SystemContext;
 
@@ -22,6 +26,14 @@ declare module "@styleguide/react" {
     const DrawerBody: React.FC<{ children: React.ReactNode }>;
     const DrawerFooter: React.FC<{ children: React.ReactNode }>;
 
+    const PaginateController: React.FC<{
+        handlePageChange: (
+            direction: "next" | "prev" | "first" | "last",
+        ) => void;
+        currentPage: number;
+        totalPages: number;
+    }>;
+
     export {
         chakraUiSystem,
         Button,
@@ -31,5 +43,6 @@ declare module "@styleguide/react" {
         DrawerHeader,
         DrawerBody,
         DrawerFooter,
+        PaginateController,
     };
 }
