@@ -3,6 +3,7 @@
     --pickme-color-secondary: #03dac6;
     --pickme-color-accent: #ff4081;
 
+    --pickme-border: rgba(0, 0, 0, 0.12);
     --pickme-bg-light: #ffffff;
     --pickme-bg-dark: #121212;
 }

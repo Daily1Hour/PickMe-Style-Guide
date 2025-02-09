@@ -4,7 +4,13 @@ declare module "@styleguide/global" {
 
 declare module "@styleguide/react" {
     import { ForwardRefExoticComponent, RefAttributes } from "react";
-    import { SystemContext, ButtonProps, IconButtonProps, FlexProps } from "@chakra-ui/react";
+    import {
+        SystemContext,
+        ButtonProps,
+        IconButtonProps,
+        FlexProps,
+        DrawerContentProps,
+    } from "@chakra-ui/react";
 
     const chakraUiSystem: SystemContext;
 
@@ -19,7 +25,9 @@ declare module "@styleguide/react" {
     }>;
     const Item: ForwardRefExoticComponent<FlexProps & RefAttributes<HTMLDivElement>>;
 
-    const DrawerLayout: React.FC<{ children: React.ReactNode }>;
+    const DrawerLayout: ForwardRefExoticComponent<
+        DrawerContentProps & RefAttributes<HTMLDivElement>
+    >;
     const DrawerHeader: React.FC<{ children: React.ReactNode }>;
     const DrawerBody: React.FC<{ children: React.ReactNode }>;
     const DrawerFooter: React.FC<{ children: React.ReactNode }>;

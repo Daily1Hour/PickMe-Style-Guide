@@ -27,7 +27,7 @@ const MenuTrigger = forwardRef((props, ref) => (
     </Box>
 ));
 
-export function DrawerLayout({ children }) {
+export const DrawerLayout = forwardRef(({ children, ...props }, ref) => {
     // 슬롯 구분
     const childrenArray = React.Children.toArray(children);
     const header = childrenArray.find((child) => child.type === DrawerHeader);
@@ -40,7 +40,7 @@ export function DrawerLayout({ children }) {
                 <MenuTrigger />
             </DrawerTrigger>
 
-            <DrawerContent minHeight="100vh" w="250px">
+            <DrawerContent minHeight="100vh" w="250px" bg="#eee" {...props} ref={ref}>
                 <DrawerActionTrigger asChild>
                     <MenuTrigger />
                 </DrawerActionTrigger>
@@ -55,4 +55,4 @@ export function DrawerLayout({ children }) {
             </DrawerContent>
         </DrawerRoot>
     );
-}
+});
