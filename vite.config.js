@@ -10,9 +10,8 @@ export default defineConfig({
             name: "pickme/style-guide",
             filename: "pickme-style-guide.js",
             exposes: {
-                "./GlobalStyles": "./src/pickme-style-guide", // 글로벌 스타일
-                "./chakra-ui-system": "./src/react-components/chakra-ui-system", // Chakra UI 시스템
-                "./Button": "./src/react-components/Button", // 아토믹 컴포넌트
+                "./global": "./src/styles/global", // 글로벌 스타일
+                "./react": "./src/react-components", // 아토믹 컴포넌트
             },
             shared: ["react", "react-dom", "@chakra-ui/react"], // 공유 모듈 중복 번들링 방지
         }),
