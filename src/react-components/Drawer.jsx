@@ -9,7 +9,7 @@ import {
     DrawerFooter as ChakraDrawerFooter,
     DrawerContent,
     DrawerTrigger,
-} from "../shared/chakra-ui/Drawer";
+} from "../shared/chakra-ui/drawer";
 
 import IconButton from "./IconButton";
 
