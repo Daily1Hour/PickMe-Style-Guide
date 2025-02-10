@@ -13,7 +13,17 @@ export default defineConfig({
                 "./global": "./src/styles/global", // 글로벌 스타일
                 "./react": "./src/react-components", // 아토믹 컴포넌트
             },
-            shared: ["react", "react-dom", "@chakra-ui/react"], // 공유 모듈 중복 번들링 방지
+            shared: {
+                react: {
+                    requiredVersion: "^18.3.1",
+                },
+                "react-dom": {
+                    requiredVersion: "^18.3.1",
+                },
+                "@chakra-ui/react": {
+                    requiredVersion: "^3.2.3",
+                },
+            }, // 공유 모듈 중복 번들링 방지
         }),
     ],
     build: {
@@ -22,5 +32,8 @@ export default defineConfig({
         target: "esnext",
         minify: false,
         cssCodeSplit: false,
+    },
+    preview: {
+        port: 9001,
     },
 });
