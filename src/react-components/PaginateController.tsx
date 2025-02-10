@@ -1,9 +1,18 @@
+import React from "react";
 import { MdFirstPage, MdKeyboardArrowLeft, MdKeyboardArrowRight, MdLastPage } from "react-icons/md";
 import { HStack, Text } from "@chakra-ui/react";
 
 import IconButton from "./IconButton";
 
-export default function PaginateController({ handlePageChange, currentPage = 0, totalPages = 1 }) {
+export default function PaginateController({
+    handlePageChange,
+    currentPage = 0,
+    totalPages = 1,
+}: {
+    handlePageChange: (type: "first" | "prev" | "next" | "last") => void;
+    currentPage: number;
+    totalPages: number;
+}) {
     return (
         <HStack w="100%" mt={2} mx={3} justify="space-between">
             <IconButton
