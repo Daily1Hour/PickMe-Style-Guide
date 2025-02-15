@@ -20,8 +20,10 @@ export const DrawerLayout = forwardRef<HTMLDivElement, { children: React.ReactNo
         const header = childrenArray.find((child) => child.type === DrawerHeader);
         const body = childrenArray.find((child) => child.type === DrawerBody);
         const footer = childrenArray.find((child) => child.type === DrawerFooter);
-
+        // Drawer open 상태
         const [open, setOpen] = useState(true);
+        // 네비게이션 공간 계산
+        const offsetHeight = (document.querySelector("#pickme-nav")?.clientHeight || 0) + "px";
 
         // DrawerContent가 포함될 컨테이너의 ref
         const containerRef = useRef<HTMLDivElement>(null);
@@ -42,6 +44,7 @@ export const DrawerLayout = forwardRef<HTMLDivElement, { children: React.ReactNo
                 </DrawerTrigger>
 
                 <DrawerContent
+                    top={offsetHeight}
                     // Drawer 렌더링되는 포털 위치 지정
                     portalRef={containerRef as React.RefObject<HTMLDivElement>}
                     // 스타일

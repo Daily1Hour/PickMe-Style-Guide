@@ -1,11 +1,12 @@
-import { chakra } from "@chakra-ui/react";
-
-const Container = chakra("div", {
-    base: {
-        transform: "translate3d(0,0,0)",
-    },
-});
+import { Box, Bleed } from "@chakra-ui/react";
 
 export default ({ children }) => {
-    return <Container id="main-container">{children}</Container>;
+    const offsetHeight = (document.querySelector("#pickme-nav")?.clientHeight || 0) + "px";
+
+    return (
+        <Box id="main-container">
+            <Bleed h={offsetHeight}>네비게이션 공간</Bleed>
+            {children}
+        </Box>
+    );
 };
