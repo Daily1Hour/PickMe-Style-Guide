@@ -1,7 +1,7 @@
 :root {
     --pickme-color-primary: #e27396;
     --pickme-color-secondary: #b3dee2;
-    --pickme-color-accent: #eaf2d7;
+    --pickme-color-tertiary: #eaf2d7;
 
     --pickme-border: rgba(0, 0, 0, 0.12);
     --pickme-bg-light: #ffffff;
@@ -12,7 +12,7 @@
     :root {
         --pickme-color-primary: #f7bfd1;
         --pickme-color-secondary: #55888d;
-        --pickme-color-accent: #eaf2d7;
+        --pickme-color-tertiary: #eaf2d7;
 
         --pickme-bg-light: #121212;
         --pickme-bg-dark: #ffffff;

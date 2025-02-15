@@ -9,7 +9,8 @@ export default forwardRef<HTMLDivElement, { children: React.ReactNode }>(
                 px="16px"
                 py="8px"
                 cursor="pointer"
-                _hover={{ bg: "gray.100" }}
+                colorPalette="pickme-tertiary"
+                _hover={{ bg: "colorPalette.emphasized" }}
                 {...props}
                 ref={ref}
             >

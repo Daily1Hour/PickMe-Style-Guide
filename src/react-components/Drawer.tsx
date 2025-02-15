@@ -1,4 +1,4 @@
-import React, { forwardRef, useRef, useLayoutEffect } from "react";
+import React, { forwardRef, useRef, useLayoutEffect, useState } from "react";
 import { MdMenu } from "react-icons/md";
 import { Box, HStack } from "@chakra-ui/react";
 import {
@@ -20,6 +20,10 @@ export const DrawerLayout = forwardRef<HTMLDivElement, { children: React.ReactNo
         const header = childrenArray.find((child) => child.type === DrawerHeader);
         const body = childrenArray.find((child) => child.type === DrawerBody);
         const footer = childrenArray.find((child) => child.type === DrawerFooter);
+        // Drawer open 상태
+        const [open, setOpen] = useState(true);
+        // 네비게이션 공간 계산
+        const offsetHeight = (document.querySelector("#pickme-nav")?.clientHeight || 0) + "px";
 
         // DrawerContent가 포함될 컨테이너의 ref
         const containerRef = useRef<HTMLDivElement>(null);
@@ -29,17 +33,27 @@ export const DrawerLayout = forwardRef<HTMLDivElement, { children: React.ReactNo
         }, []);
 
         return (
-            <DrawerRoot placement="start" size="xs">
+            <DrawerRoot
+                placement="start"
+                size="xs"
+                open={open}
+                onOpenChange={(e) => setOpen(e.open)}
+            >
                 <DrawerTrigger asChild>
                     <MenuTrigger />
                 </DrawerTrigger>
 
                 <DrawerContent
+                    top={offsetHeight}
+                    // Drawer 렌더링되는 포털 위치 지정
                     portalRef={containerRef as React.RefObject<HTMLDivElement>}
+                    // 스타일
                     minHeight="100vh"
                     w="250px"
-                    bg="#eee"
-                    {...props} // 오리지널 props, ref 전달
+                    colorPalette="pickme-tertiary"
+                    bg={{ base: "colorPalette.subtle" }}
+                    // 오리지널 props, ref 전달
+                    {...props}
                     ref={ref}
                 >
                     <DrawerActionTrigger asChild>
