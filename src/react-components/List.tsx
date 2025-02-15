@@ -7,11 +7,12 @@ export default forwardRef<
 >(({ children, bordered, separator, ...props }, ref) => {
     return (
         <VStack
+            colorPalette="pickme-teriary"
             borderWidth={bordered ? 1 : 0}
-            borderColor="var(--pickme-border, gray.100)"
+            borderColor="colorPalette.muted"
             gap={0}
             divideY={(separator ? 1 : 0) + "px"}
-            divideColor="var(--pickme-border, gray.100)"
+            divideColor="colorPalette.muted"
             {...props}
             ref={ref}
         >

@@ -2,7 +2,7 @@ import { chakra, Button } from "@chakra-ui/react";
 
 export default chakra(Button, {
     base: {
-        colorPalette: "pickme",
+        colorPalette: "pickme-primary",
         borderRadius: "lg",
         _hover: {
             opacity: 0.8,
