@@ -78,7 +78,7 @@ export const DrawerFooter = ({ children }) => <>{children}</>;
 // 메뉴 버튼, 이벤트 전파를 위해 forwardRef 사용
 const MenuTrigger = forwardRef<HTMLButtonElement, React.ComponentPropsWithoutRef<"button">>(
     (props, ref) => (
-        <Box position="fixed" m="16px">
+        <Box position="fixed" m="16px" zIndex="sticky">
             <IconButton ref={ref} {...props}>
                 <MdMenu />
             </IconButton>
