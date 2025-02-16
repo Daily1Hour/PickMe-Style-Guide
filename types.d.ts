@@ -2,6 +2,14 @@ declare module "@styleguide/global" {
     export {};
 }
 
+declare module "@styleguide/vue" {
+    import { App } from "vue";
+
+    const Bleed: App;
+
+    export { Bleed };
+}
+
 declare module "@styleguide/react" {
     import { ForwardRefExoticComponent, RefAttributes } from "react";
     import {

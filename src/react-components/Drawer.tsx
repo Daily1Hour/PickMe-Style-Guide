@@ -71,14 +71,15 @@ export const DrawerLayout = forwardRef<HTMLDivElement, { children: React.ReactNo
 );
 
 // 슬롯 구분을 위한 컴포넌트
-export const DrawerHeader = ({ children }) => <>{children}</>;
-export const DrawerBody = ({ children }) => <>{children}</>;
-export const DrawerFooter = ({ children }) => <>{children}</>;
+type DrawerSlot = React.FC<{ children: React.ReactNode }>;
+export const DrawerHeader: DrawerSlot = ({ children }) => <>{children}</>;
+export const DrawerBody: DrawerSlot = ({ children }) => <>{children}</>;
+export const DrawerFooter: DrawerSlot = ({ children }) => <>{children}</>;
 
 // 메뉴 버튼, 이벤트 전파를 위해 forwardRef 사용
 const MenuTrigger = forwardRef<HTMLButtonElement, React.ComponentPropsWithoutRef<"button">>(
     (props, ref) => (
-        <Box position="fixed" m="16px">
+        <Box position="fixed" m="16px" zIndex="sticky">
             <IconButton ref={ref} {...props}>
                 <MdMenu />
             </IconButton>
