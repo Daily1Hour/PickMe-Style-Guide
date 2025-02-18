@@ -5,7 +5,6 @@
 
     --pickme-border: rgba(0, 0, 0, 0.12);
     --pickme-bg-light: #ffffff;
-    --pickme-bg-dark: #121212;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,7 +13,6 @@
         --pickme-color-secondary: #55888d;
         --pickme-color-tertiary: #eaf2d7;
 
-        --pickme-bg-light: #121212;
-        --pickme-bg-dark: #ffffff;
+        --pickme-bg-dark: #10004a;
     }
 }
