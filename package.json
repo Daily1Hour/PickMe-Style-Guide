@@ -7,10 +7,11 @@
     "@types/react": "^19.0.8",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitejs/plugin-vue": "^5.2.1",
+    "concurrently": "^9.1.2",
     "vite": "^6.1.0"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"vite build --watch\" \"vite preview\"",
     "build": "vite build",
     "preview": "vite preview"
   },
