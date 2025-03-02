@@ -24,18 +24,17 @@ export default createSystem(defaultConfig, config);
 // 색상 스케일(50~950) 생성 함수
 function generateColorScale(color) {
     return {
-        DEFAULT: `var(${color})`,
-        50: `color-mix(in srgb, white 90%, var(${color}))`,
-        100: `color-mix(in srgb, white 70%, var(${color}))`,
-        200: `color-mix(in srgb, white 50%, var(${color}))`,
-        300: `color-mix(in srgb, white 30%, var(${color}))`,
-        400: `color-mix(in srgb, white 10%, var(${color}))`,
-        500: `var(${color})`,
-        600: `color-mix(in srgb, black 10%, var(${color}))`,
-        700: `color-mix(in srgb, black 20%, var(${color}))`,
-        800: `color-mix(in srgb, black 30%, var(${color}))`,
-        900: `color-mix(in srgb, black 40%, var(${color}))`,
-        950: `color-mix(in srgb, black 50%, var(${color}))`,
+        50: { value: `color-mix(in srgb, white 90%, var(${color}))` },
+        100: { value: `color-mix(in srgb, white 70%, var(${color}))` },
+        200: { value: `color-mix(in srgb, white 50%, var(${color}))` },
+        300: { value: `color-mix(in srgb, white 30%, var(${color}))` },
+        400: { value: `color-mix(in srgb, white 10%, var(${color}))` },
+        500: { value: `var(${color})` },
+        600: { value: `color-mix(in srgb, black 10%, var(${color}))` },
+        700: { value: `color-mix(in srgb, black 20%, var(${color}))` },
+        800: { value: `color-mix(in srgb, black 30%, var(${color}))` },
+        900: { value: `color-mix(in srgb, black 40%, var(${color}))` },
+        950: { value: `color-mix(in srgb, black 50%, var(${color}))` },
     };
 }
 
