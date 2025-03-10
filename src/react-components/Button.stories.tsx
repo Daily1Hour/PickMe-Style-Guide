@@ -18,16 +18,16 @@ const meta = {
         ),
     ],
     argTypes: {
-        colorPalette: {
-            control: "text",
-            defaultValue: "pickme-primary",
-        },
+        colorPalette: { control: "text" },
         borderRadius: {
             control: "select",
             options: ["xs", "sm", "md", "lg", "xl"],
-            defaultValue: "lg",
         },
-        children: { control: "text", defaultValue: "Click me" },
+    },
+    args: {
+        colorPalette: "pickme-primary",
+        borderRadius: "lg",
+        children: "Click me",
     },
 } satisfies Meta<typeof Button>;
 
@@ -36,21 +36,18 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        children: "Click me",
         colorPalette: "pickme-primary",
     },
 };
 
 export const SecondaryButton: Story = {
     args: {
-        children: "Click me",
         colorPalette: "pickme-secondary",
     },
 };
 
 export const TertiaryButton: Story = {
     args: {
-        children: "Click me",
         colorPalette: "pickme-tertiary",
     },
 };
