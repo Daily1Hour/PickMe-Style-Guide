@@ -9,6 +9,9 @@ const meta = {
     title: "React/Button",
     component: Button,
     tags: ["autodocs"],
+    parameters: {
+        layout: "centered",
+    },
 
     decorators: [
         (Story) => (

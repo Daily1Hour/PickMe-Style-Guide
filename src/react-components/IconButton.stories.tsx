@@ -10,6 +10,9 @@ const meta = {
     title: "React/IconButton",
     component: IconButton,
     tags: ["autodocs"],
+    parameters: {
+        layout: "centered",
+    },
 
     decorators: [
         (Story) => (
