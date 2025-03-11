@@ -39,7 +39,12 @@ export default defineConfig({
         minify: true,
         cssMinify: true,
         cssCodeSplit: false,
-        emptyOutDir: true,
+        emptyOutDir: false,
+        rollupOptions: {
+            input: {
+                main: "src/main.js", // index.html 없이 빌드
+            },
+        },
     },
     preview: {
         port: 9001,
