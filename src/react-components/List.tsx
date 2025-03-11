@@ -1,9 +1,12 @@
 import React, { forwardRef } from "react";
-import { VStack, Flex } from "@chakra-ui/react";
+import { VStack, Flex, StackProps } from "@chakra-ui/react";
 
 export default forwardRef<
     HTMLDivElement,
-    { children: React.ReactNode; bordered?: boolean; separator?: boolean }
+    Omit<StackProps, "separator"> & {
+        bordered?: boolean;
+        separator?: boolean;
+    }
 >(({ children, bordered, separator, ...props }, ref) => {
     return (
         <VStack
