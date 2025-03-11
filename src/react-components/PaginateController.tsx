@@ -1,4 +1,3 @@
-import React from "react";
 import { MdFirstPage, MdKeyboardArrowLeft, MdKeyboardArrowRight, MdLastPage } from "react-icons/md";
 import { HStack, Text } from "@chakra-ui/react";
 
