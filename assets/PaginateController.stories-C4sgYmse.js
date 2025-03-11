@@ -1,0 +1,3 @@
+import{importShared as t}from"./__federation_fn_import-D6pFl-Q5.js";import{j as r}from"./jsx-runtime-Cf8x2fCZ.js";import"./__federation_expose_Global-B5WvDoxx.js";import{c as o}from"./chakra-ui-system-HxJOisVQ.js";import{P as s}from"./PaginateController-Bt9sr_FC.js";const{ChakraProvider:c}=await t("@chakra-ui/react"),d={title:"React/PaginateController",component:s,tags:["autodocs"],decorators:[e=>r.jsx(c,{value:o,children:r.jsx(e,{})})],argTypes:{},args:{handlePageChange:()=>{},currentPage:1,totalPages:5}},a={args:{}};a.parameters={...a.parameters,docs:{...a.parameters?.docs,source:{originalSource:`{
+  args: {}
+}`,...a.parameters?.docs?.source}}};const g=["Default"];export{a as Default,g as __namedExportsOrder,d as default};

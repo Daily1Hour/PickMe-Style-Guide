@@ -1,0 +1,1 @@
+import{importShared as r}from"./__federation_fn_import-D6pFl-Q5.js";import{j as a}from"./jsx-runtime-Cf8x2fCZ.js";const{forwardRef:p}=await r("react"),{Flex:i}=await r("@chakra-ui/react"),m=p(({children:t,...e},o)=>a.jsx(i,{w:"100%",px:"16px",py:"8px",cursor:"pointer",colorPalette:"pickme-tertiary",_hover:{bg:"colorPalette.emphasized"},...e,ref:o,children:t}));export{m as I};

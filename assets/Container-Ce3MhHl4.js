@@ -1,0 +1,1 @@
+import{importShared as o}from"./__federation_fn_import-D6pFl-Q5.js";import{j as e}from"./jsx-runtime-Cf8x2fCZ.js";const{Box:n,Bleed:a}=await o("@chakra-ui/react"),m=({children:t,offset:r})=>{const i=r??(document.querySelector("#pickme-nav")?.clientHeight||0)+"px";return e.jsxs(n,{id:"main-container",children:[e.jsx(a,{h:i,children:"네비게이션 공간"}),t]})};export{m as C};

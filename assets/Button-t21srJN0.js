@@ -1,0 +1,1 @@
+import{importShared as a}from"./__federation_fn_import-D6pFl-Q5.js";const{chakra:r,Button:t}=await a("@chakra-ui/react"),e=r(t,{base:{colorPalette:"pickme-primary",borderRadius:"lg",_hover:{opacity:.8}}});export{e as B};
