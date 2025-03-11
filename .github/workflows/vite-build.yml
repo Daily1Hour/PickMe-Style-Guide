@@ -28,6 +28,10 @@ jobs:
       - name: Install dependencies
         run: npm ci # 의존성 설치
 
+      - name: Build Storybook
+        run: |
+          npm run build-storybook # Storybook 빌드
+
       - name: Build Vite project
         run: |
           npm run build # Vite 프로젝트 빌드
