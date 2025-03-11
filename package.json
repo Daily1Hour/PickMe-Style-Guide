@@ -6,7 +6,7 @@
     "dev": "concurrently \"vite build --watch\" \"vite preview\"",
     "build": "vite build",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev",
     "build-storybook": "storybook build --output-dir dist"
   },
   "author": "",
