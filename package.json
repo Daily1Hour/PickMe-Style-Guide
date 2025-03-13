@@ -1,6 +1,6 @@
 {
   "name": "@pickme/style-guide",
-  "version": "1.4.1",
+  "version": "1.5.1",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite build --watch\" \"vite preview\"",
@@ -29,7 +29,8 @@
     "@storybook/react": "^8.6.4",
     "@storybook/react-vite": "^8.6.4",
     "@storybook/test": "^8.6.4",
-    "@types/react": "^19.0.8",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vitest/browser": "^3.0.8",
