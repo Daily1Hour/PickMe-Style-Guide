@@ -6,9 +6,9 @@
     "dev": "concurrently \"vite build --watch\" \"vite preview\"",
     "build": "vite build",
     "preview": "vite preview",
-    "storybook": "storybook dev",
-    "storybook:react": "storybook dev -c src/react-components/.storybook",
-    "storybook:vue": "storybook dev -c src/vue-components/.storybook",
+    "storybook": "storybook dev -p 6006",
+    "storybook:vue": "storybook dev -c src/vue-components/.storybook -p 6007",
+    "storybook:react": "storybook dev -c src/react-components/.storybook -p 6008",
     "build-storybook:react": "cd src/react-components && npx storybook build -o ../../dist/react",
     "build-storybook:vue": "cd src/vue-components && npx storybook build -o ../../dist/vue",
     "build-storybook": "storybook build --output-dir dist"
