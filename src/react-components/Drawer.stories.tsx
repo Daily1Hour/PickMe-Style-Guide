@@ -1,7 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ChakraProvider } from "@chakra-ui/react";
 
-import chakraUiSystem from "./chakra-ui-system";
 import { DrawerLayout } from "./Drawer";
 
 const meta = {
@@ -9,13 +7,6 @@ const meta = {
     tags: ["autodocs"],
     component: DrawerLayout,
 
-    decorators: [
-        (Story) => (
-            <ChakraProvider value={chakraUiSystem}>
-                <Story />
-            </ChakraProvider>
-        ),
-    ],
     argTypes: {},
 } satisfies Meta<typeof DrawerLayout>;
 

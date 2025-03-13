@@ -1,8 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ChakraProvider } from "@chakra-ui/react";
 
-import "../styles/global.js";
-import chakraUiSystem from "./chakra-ui-system";
 import Button from "./Button";
 
 const meta = {
@@ -13,13 +10,6 @@ const meta = {
         layout: "centered",
     },
 
-    decorators: [
-        (Story) => (
-            <ChakraProvider value={chakraUiSystem}>
-                <Story />
-            </ChakraProvider>
-        ),
-    ],
     argTypes: {
         colorPalette: { control: "text" },
         borderRadius: {
