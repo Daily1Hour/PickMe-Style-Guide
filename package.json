@@ -7,6 +7,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "storybook": "storybook dev",
+    "storybook:react": "storybook dev -c src/react-components/.storybook",
+    "storybook:vue": "storybook dev -c src/vue-components/.storybook",
     "build-storybook": "storybook build --output-dir dist"
   },
   "author": "",
@@ -29,6 +31,8 @@
     "@storybook/react": "^8.6.4",
     "@storybook/react-vite": "^8.6.4",
     "@storybook/test": "^8.6.4",
+    "@storybook/vue3": "^8.6.4",
+    "@storybook/vue3-vite": "^8.6.4",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
