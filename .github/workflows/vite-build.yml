@@ -32,9 +32,9 @@ jobs:
         env:
           PUBLIC_URL: ${{ vars.PUBLIC_URL }}
         run: |
+          npm run build-storybook # Storybook 빌드
           npm run build-storybook:react
           npm run build-storybook:vue
-          npm run build-storybook # Storybook 빌드
 
       - name: Build Vite project
         run: |
