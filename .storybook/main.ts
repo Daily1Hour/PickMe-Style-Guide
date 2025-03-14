@@ -6,7 +6,7 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const config: StorybookConfig = {
     stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-    refs: {
+    refs: async () => ({
         vue: {
             title: "Vue Components",
             url: PUBLIC_URL ? PUBLIC_URL + "/vue" : "http://localhost:6007",
@@ -15,7 +15,7 @@ const config: StorybookConfig = {
             title: "React Components",
             url: PUBLIC_URL ? PUBLIC_URL + "/react" : "http://localhost:6008",
         },
-    },
+    }),
     framework: "@storybook/react-vite",
 };
 
