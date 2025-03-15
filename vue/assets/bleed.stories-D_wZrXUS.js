@@ -1,0 +1,5 @@
+import{d as p,b as u,o as i,e as m,n as g}from"./vue.esm-bundler-2BX4xI9l.js";const l=p({__name:"bleed",props:{height:{}},setup(o){return(e,r)=>(i(),u("div",{id:"bleed",class:"bleed",style:g({height:e.height+"px"})},[m(e.$slots,"default",{},void 0,!0)],4))}}),h=(o,e)=>{const r=o.__vccOpts||o;for(const[c,d]of e)r[c]=d;return r},_=h(l,[["__scopeId","data-v-e1ba82e0"]]);l.__docgenInfo={exportName:"default",displayName:"bleed",description:"",tags:{},props:[{name:"height",required:!0,type:{name:"number"}}],slots:[{name:"default"}],sourceFiles:["/home/runner/work/PickMe-Style-Guide/PickMe-Style-Guide/src/vue-components/bleed.vue"]};const b={title:"Vue/bleed",component:_,tags:["autodocs"],argTypes:{height:{control:"text"},default:{control:"text",table:{disable:!0}}},args:{default:"Empty"}},t={args:{height:100}};var s,a,n;t.parameters={...t.parameters,docs:{...(s=t.parameters)==null?void 0:s.docs,source:{originalSource:`{
+  args: {
+    height: 100
+  }
+}`,...(n=(a=t.parameters)==null?void 0:a.docs)==null?void 0:n.source}}};const y=["Default"];export{t as Default,y as __namedExportsOrder,b as default};

@@ -46,7 +46,25 @@
     <link href="./sb-manager/runtime.js" rel="modulepreload" />
 
     
-    <link href="./sb-addons/common-manager-bundle.js" rel="modulepreload" />
+    <link href="./sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-controls-1/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-actions-2/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-docs-3/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-backgrounds-4/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-viewport-5/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-toolbars-6/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-measure-7/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/essentials-outline-8/manager-bundle.js" rel="modulepreload" />
+    
+    <link href="./sb-addons/chromatic-com-storybook-9/manager-bundle.js" rel="modulepreload" />
        
 
     <style>
@@ -73,24 +91,17 @@
       
         
           window['REFS'] = {
-  "@chakra-ui/react": {
-    "id": "@chakra-ui/react",
-    "url": "https://storybook.chakra-ui.com",
-    "title": "Chakra UI",
-    "version": "3.12.0",
+  "vue": {
+    "title": "Vue Components",
+    "url": "https://daily1hour.github.io/PickMe-Style-Guide/vue",
+    "id": "vue",
     "type": "server-checked"
   },
   "react": {
     "title": "React Components",
     "url": "https://daily1hour.github.io/PickMe-Style-Guide/react",
     "id": "react",
-    "type": "unknown"
-  },
-  "vue": {
-    "title": "Vue Components",
-    "url": "https://daily1hour.github.io/PickMe-Style-Guide/vue",
-    "id": "vue",
-    "type": "unknown"
+    "type": "server-checked"
   }
 };
         
@@ -100,7 +111,10 @@
         
       
         
-          window['DOCS_OPTIONS'] = {};
+          window['DOCS_OPTIONS'] = {
+  "defaultName": "Docs",
+  "autodocs": "tag"
+};
         
       
         
@@ -145,7 +159,25 @@
       import './sb-manager/globals-runtime.js';
       
       
-        import './sb-addons/common-manager-bundle.js';
+        import './sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js';
+      
+        import './sb-addons/essentials-controls-1/manager-bundle.js';
+      
+        import './sb-addons/essentials-actions-2/manager-bundle.js';
+      
+        import './sb-addons/essentials-docs-3/manager-bundle.js';
+      
+        import './sb-addons/essentials-backgrounds-4/manager-bundle.js';
+      
+        import './sb-addons/essentials-viewport-5/manager-bundle.js';
+      
+        import './sb-addons/essentials-toolbars-6/manager-bundle.js';
+      
+        import './sb-addons/essentials-measure-7/manager-bundle.js';
+      
+        import './sb-addons/essentials-outline-8/manager-bundle.js';
+      
+        import './sb-addons/chromatic-com-storybook-9/manager-bundle.js';
       
       
       import './sb-manager/runtime.js';

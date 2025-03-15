@@ -1,1 +1,1 @@
-{"v":5,"entries":{}}
+{"v":5,"entries":{"vue-bleed--docs":{"id":"vue-bleed--docs","title":"Vue/bleed","name":"Docs","importPath":"./bleed.stories.ts","type":"docs","tags":["dev","test","autodocs"],"storiesImports":[]},"vue-bleed--default":{"type":"story","id":"vue-bleed--default","name":"Default","title":"Vue/bleed","importPath":"./bleed.stories.ts","componentPath":"./bleed.vue","tags":["dev","test","autodocs"]}}}
