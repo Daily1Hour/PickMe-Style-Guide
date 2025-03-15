@@ -1,0 +1,64 @@
+import { Meta } from "@storybook/addon-docs";
+
+<Meta title="Docs/Welcome" />
+
+# PickMe Storybook
+
+Micro Frontend 구성의 PickMe 애플리케이션들의 공통 컴포넌트를 위한 Storybook 페이지입니다.
+
+<div className="subheading">rules</div>
+
+storybook을 작성할 때 아래와 같은 규칙들을 따릅니다.
+
+-   **컴포넌트 생성**
+
+    1. 각 프레임워크에 맞는 위치에서 컴포넌트를 생성합니다.
+    `/src/react-components/` `/src/vue-components/`
+
+    2. 외부로 내보낼 컴포넌트는 index 파일에서 export 합니다.
+
+-   **스토리 생성**
+
+    각 컴포넌트의 확장자에 `.stories.`를 추가하여 생성합니다.
+
+<div className="subheading">use</div>
+
+
+Module Federation을 통해 외부에서 컴포넌트를 불러올 수 있도록 빌드됩니다.
+외부 프로젝트는 아래와 같이 컴포넌트를 불러올 수 있습니다.
+
+```jsx
+import { Button } from '@styleguide/react';
+```
+
+
+
+<style>
+{`
+    .subheading {
+        --mediumdark: '#999999';
+        font-weight: 900;
+        font-size: 13px;
+        color: #999;
+        letter-spacing: 6px;
+        line-height: 24px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        margin-top: 40px;
+    }
+
+    a.recruit {
+        color: #152447;
+    }
+
+    .aside {
+        font-size: 87.5%;
+        line-height: 1.43;
+        color: rgb(102, 102, 102);
+        background: rgb(248, 250, 252);
+        border-radius: 5px;
+        padding: 1em;
+        margin: 1.5em 0px;
+    }
+`}
+</style>
