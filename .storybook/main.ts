@@ -6,6 +6,13 @@ const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const config: StorybookConfig = {
     stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+    framework: "@storybook/react-vite",
+    addons: [
+        "@storybook/addon-links",
+        "@storybook/addon-essentials",
+        "@storybook/addon-interactions",
+        "@chromatic-com/storybook",
+    ],
     refs: async () => ({
         vue: {
             title: "Vue Components",
@@ -16,7 +23,6 @@ const config: StorybookConfig = {
             url: PUBLIC_URL ? PUBLIC_URL + "/react" : "http://localhost:6008",
         },
     }),
-    framework: "@storybook/react-vite",
 };
 
 export default config;
