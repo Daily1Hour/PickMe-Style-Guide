@@ -92,6 +92,49 @@ $ npm run dev
 
 ## 📝 호스트 사용법
 
+```mermaid
+flowchart BT
+    %% 스타일 및 컴포넌트 공유
+    subgraph styleguide[@pickme/style-guide]
+        subgraph react["/react-components"]
+            styleguide/react/chakra-ui-system.jsx[chakra-ui-system.jsx]
+            styleguide/react/components[Shared Components]
+        end
+        subgraph vue["/vue-components"]
+            styleguide/vue/components[Shared Components]
+        end
+        subgraph styles["/styles"]
+            styleguide/styles/global.ts[global.css]
+        end
+    end
+
+    %% Microfrontend 루트 앱
+    subgraph mfa-root[@pickme/mfa-root]
+        mfa-root/microfrontend-layout.html[microfrontend-layout.html]
+        mfa-root/index.ejs[index.ejs]
+    end
+    mfa-root/index.ejs -.-> styleguide/styles/global.ts
+
+    %% Vue 앱
+    subgraph report[@pickme/report]
+        report/Components[Components]
+    end
+    report/Components -.-> styleguide/vue/components
+    report:::delegate
+
+    %% React 앱
+    subgraph record[@pickme/record]
+        record/ChakraProvider[ChakraProvider]
+        record/Components[Components]
+    end
+    record/ChakraProvider -.-> styleguide/react/chakra-ui-system.jsx
+    record/Components -.-> styleguide/react/components
+    record:::delegate
+
+    %% 대표 앱 표시
+    classDef delegate stroke-width:3px;
+```
+
 ### EJS
 
 ```html
