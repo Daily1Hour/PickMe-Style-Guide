@@ -1,8 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { ChakraProvider } from "@chakra-ui/react";
 
-import "../styles/global.js";
-import chakraUiSystem from "./chakra-ui-system";
 import List from "./List";
 import Item from "./Item";
 
@@ -11,13 +8,6 @@ const meta = {
     component: List,
     tags: ["autodocs"],
 
-    decorators: [
-        (Story) => (
-            <ChakraProvider value={chakraUiSystem}>
-                <Story />
-            </ChakraProvider>
-        ),
-    ],
     argTypes: {
         children: { table: { disable: true } },
         bordered: { control: "boolean" },

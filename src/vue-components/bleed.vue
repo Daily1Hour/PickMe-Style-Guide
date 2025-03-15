@@ -1,5 +1,5 @@
 <template>
-    <div id="bleed" class="bleed" :style="{ height }">
+    <div id="bleed" class="bleed" :style="{ height: height + 'px' }">
         <slot />
     </div>
 </template>

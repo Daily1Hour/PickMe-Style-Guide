@@ -1,6 +1,9 @@
 {
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
+        "*.jsx": "$(capture).stories.*",
+        "*.tsx": "$(capture).stories.*",
+        "*.vue": "$(capture).stories.*",
         ".env": ".env.*",
         ".gitignore": ".gitattributes",
         "setup.ps1": "setup.*, .gitconfig, .gitmessage",
@@ -8,9 +11,5 @@
         "vite.config.*": "vite.*.config.ts, jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*, vite-env.d.ts",
         "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*"
     },
-    "cSpell.words": [
-        "chakra",
-        "pickme",
-        "styleguide"
-    ]
+    "cSpell.words": ["chakra", "pickme", "styleguide"]
 }
