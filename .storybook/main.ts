@@ -5,7 +5,7 @@ dotenvConfig();
 const PUBLIC_URL = process.env.PUBLIC_URL;
 
 const config: StorybookConfig = {
-    stories: ["../stories/**/*.mdx", "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+    stories: ["../src/stories/**/*.mdx", "../src/stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
     framework: "@storybook/react-vite",
     addons: [
         "@storybook/addon-links",
