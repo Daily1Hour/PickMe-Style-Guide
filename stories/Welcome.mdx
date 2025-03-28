@@ -47,10 +47,10 @@ export const color_scheme = [
 <table>
     {color_scheme.map(({name, color, shades}) => (
         <tr>
-            <td className="palette-td" style={{ backgroundColor: shades[0], color: 'white' }}>{ name }</td>
+            <td className="palette-cell" style={{ backgroundColor: shades[0] }}>{ name }</td>
             {shades.map((shade) => (
-                <td className="palette-td" style={{ backgroundColor: shade }}>
-                    {shade === color ? '✓' : ''}
+                <td className="palette-cell" style={{ backgroundColor: shade }}>
+                    {shade == color ? '✓' : ''}
                 </td>
             ))}
             <td>{ color }</td>
@@ -87,8 +87,9 @@ export const color_scheme = [
         margin: 1.5em 0px;
     }
 
-    .palette-td {
+    .palette-cell {
         width:10px;
+        color: white !important;
     }
 `}
 </style>
