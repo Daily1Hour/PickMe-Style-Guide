@@ -1,7 +1,7 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
 import Hex from "../shared/utils/Hex";
-import adjust_lightness from "../shared/utils/generate_color_shades";
+import adjustLightness from "../shared/utils/generateColorShades";
 
 const config = defineConfig({
     theme: {
@@ -34,7 +34,7 @@ function generateColorScale(color) {
     // 색상 스케일 생성
     const shades = token_keys
         .map((key) => (key - 500) / 10)
-        .map(adjust_lightness(hsl))
+        .map(adjustLightness(hsl))
         .map((adjusted_hsl) => adjusted_hsl.to_rgb().to_hex().toString());
 
     return zip(token_keys, shades)

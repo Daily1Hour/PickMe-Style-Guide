@@ -1,4 +1,4 @@
-import BaseModel from "./ColorModel";
+import BaseModel from "./BaseModel";
 import Hex from "./Hex";
 import RGB from "./RGB";
 
@@ -12,7 +12,7 @@ export default class HSL extends BaseModel {
         super();
     }
 
-    public to_rgb(): RGB {
+    public toRGB(): RGB {
         // chroma(채도 강도), m(보정값)
         const c = ((1 - Math.abs((2 * this.l) / 100 - 1)) * this.s) / 100;
         const x = c * (1 - Math.abs(((this.h / 60) % 2) - 1));
@@ -31,11 +31,11 @@ export default class HSL extends BaseModel {
         return new RGB(r, g, b);
     }
 
-    public to_hex(): Hex {
-        return this.to_rgb().to_hex();
+    public toHex(): Hex {
+        return this.toRGB().toHex();
     }
 
-    public to_hsl(): HSL {
+    public toHSL(): HSL {
         return this;
     }
 }

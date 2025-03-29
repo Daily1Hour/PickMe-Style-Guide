@@ -1,4 +1,4 @@
-import BaseModel from "./ColorModel";
+import BaseModel from "./BaseModel";
 import Hex from "./Hex";
 import HSL from "./HSL";
 
@@ -12,7 +12,7 @@ export default class RGB extends BaseModel {
         super();
     }
 
-    public to_hex(): Hex {
+    public toHex(): Hex {
         return new Hex(
             `#${((1 << 24) | (this.r << 16) | (this.g << 8) | this.b)
                 .toString(16)
@@ -21,7 +21,7 @@ export default class RGB extends BaseModel {
         );
     }
 
-    public to_hsl(): HSL {
+    public toHSL(): HSL {
         // RGB에서 최대값과 최소값 계산
         const max = Math.max(this.r, this.g, this.b);
         const min = Math.min(this.r, this.g, this.b);
@@ -52,7 +52,7 @@ export default class RGB extends BaseModel {
         return new HSL(h, s, l);
     }
 
-    public to_rgb(): RGB {
+    public toRGB(): RGB {
         return this;
     }
 

@@ -1,9 +1,7 @@
-import Hex from "./Hex";
-import HSL from "./HSL";
-import RGB from "./RGB";
+import { Hex, RGB, HSL } from "./colorModel";
 
 // hsl 객체를 받아서 밝기를 조절
-export function adjust_lightness({ h, s, l }: HSL): (percentage: number) => HSL {
+export function adjustLightness({ h, s, l }: HSL): (percentage: number) => HSL {
     return function (percentage: number): HSL {
         const new_l = Math.max(0, Math.min(100, l - percentage));
 
@@ -12,12 +10,12 @@ export function adjust_lightness({ h, s, l }: HSL): (percentage: number) => HSL 
 }
 
 // 헥사코드를 받아서 10단계의 색상을 생성
-export default function generate_color_shades(code: `#${string}`): Hex[] {
+export default function generateColorShades(code: `#${string}`): Hex[] {
     const length = 10;
-    const hsl = new Hex(code).to_hsl();
+    const hsl = new Hex(code).toHSL();
 
     return Array.from({ length }, (_, index) => (length / 2 - index) * (100 / length))
-        .map(adjust_lightness(hsl))
-        .map(HSL.to_rgb)
-        .map(RGB.to_hex);
+        .map(adjustLightness(hsl))
+        .map(HSL.toRGB)
+        .map(RGB.toHex);
 }

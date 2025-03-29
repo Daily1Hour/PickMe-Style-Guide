@@ -1,4 +1,4 @@
-import BaseModel from "./ColorModel";
+import BaseModel from "./BaseModel";
 import HSL from "./HSL";
 import RGB from "./RGB";
 
@@ -10,7 +10,7 @@ export default class Hex extends BaseModel {
         super();
     }
 
-    public to_rgb(): RGB {
+    public toRGB(): RGB {
         return new RGB(
             parseInt(this.code.substring(1, 3), 16) / 0xff,
             parseInt(this.code.substring(3, 5), 16) / 0xff,
@@ -18,11 +18,11 @@ export default class Hex extends BaseModel {
         );
     }
 
-    public to_hsl(): HSL {
-        return this.to_rgb().to_hsl();
+    public toHSL(): HSL {
+        return this.toRGB().toHSL();
     }
 
-    public to_hex(): Hex {
+    public toHex(): Hex {
         return this;
     }
 

@@ -36,13 +36,13 @@ import { Button } from '@styleguide/react';
 
 ![palette](https://github.com/user-attachments/assets/124ce6af-bc46-4134-aef2-c2822358b038)
 
-import generate_color_shades from "../shared/utils/generate_color_shades";
+import generateColorShades from "../shared/utils/generateColorShades";
 
 export const color_scheme = [
     { name: 'Primary', color: '#E27396', },
     { name: 'Secondary', color: '#B1DEE2', },
     { name: 'Tertiary', color: '#EBF3D8', }
-].map(({ color, ...rest }) => ({ color, shades: generate_color_shades(color), ...rest }));
+].map(({ color, ...rest }) => ({ color, shades: generateColorShades(color), ...rest }));
 
 <table>
     {color_scheme.map(({name, color, shades}) => (
