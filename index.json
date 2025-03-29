@@ -1,1 +1,1 @@
-{"v":5,"entries":{"docs-welcome--docs":{"id":"docs-welcome--docs","title":"Docs/Welcome","name":"Docs","importPath":"./stories/Welcome.mdx","storiesImports":[],"type":"docs","tags":["dev","test","unattached-mdx"]}}}
+{"v":5,"entries":{"docs-welcome--docs":{"id":"docs-welcome--docs","title":"Docs/Welcome","name":"Docs","importPath":"./src/stories/Welcome.mdx","storiesImports":[],"type":"docs","tags":["dev","test","unattached-mdx"]}}}
