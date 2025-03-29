@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
 import federation from "@originjs/vite-plugin-federation";
 
 // https://vitejs.dev/config/
@@ -31,6 +32,7 @@ export default defineConfig({
                 },
             }, // 공유 모듈 중복 번들링 방지
         }),
+        tsconfigPaths({ loose: true }), // tsconfig.json의 paths 설정을 적용
     ],
     build: {
         modulePreload: false,

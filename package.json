@@ -1,6 +1,6 @@
 {
   "name": "@pickme/style-guide",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite build --watch\" \"vite preview\"",
@@ -48,6 +48,7 @@
     "playwright": "^1.51.0",
     "storybook": "^8.6.4",
     "vite": "^6.1.0",
+    "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.8"
   },
   "types": "types.d.ts",
