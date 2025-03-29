@@ -1,6 +1,7 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
-import { adjust_lightness, Hex } from "../shared/utils/generate_color_shades";
+import Hex from "../shared/utils/Hex";
+import adjust_lightness from "../shared/utils/generate_color_shades";
 
 const config = defineConfig({
     theme: {
