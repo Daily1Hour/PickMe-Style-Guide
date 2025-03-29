@@ -36,20 +36,22 @@ import { Button } from '@styleguide/react';
 
 ![palette](https://github.com/user-attachments/assets/124ce6af-bc46-4134-aef2-c2822358b038)
 
-import generateColorShades from "../shared/utils/generateColorShades";
+import generateColorScale from "../shared/utils/generateColorScale";
+
+export const token_keys = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
 
 export const color_scheme = [
     { name: 'Primary', color: '#E27396', },
     { name: 'Secondary', color: '#B1DEE2', },
     { name: 'Tertiary', color: '#EBF3D8', }
-].map(({ color, ...rest }) => ({ color, shades: generateColorShades(color), ...rest }));
+].map(({ color, ...rest }) => ({ color, shades: generateColorScale(color, token_keys).reverse(), ...rest }));
 
 <table>
     {color_scheme.map(({name, color, shades}) => (
         <tr>
-            <td className="palette-cell" style={{ backgroundColor: shades[0] }}>{ name }</td>
-            {shades.map((shade) => (
+            {shades.map((shade, index) => (
                 <td className="palette-cell" style={{ backgroundColor: shade }}>
+                    {index === 0 ? name : ''}
                     {shade == color ? '✓' : ''}
                 </td>
             ))}

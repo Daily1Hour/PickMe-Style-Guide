@@ -1,15 +1,15 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
-import Hex from "../shared/utils/Hex";
-import adjustLightness from "../shared/utils/generateColorShades";
+import generateColorScale from "@/shared/utils/generateColorScale";
+import zip from "@/shared/utils/zip";
 
 const config = defineConfig({
     theme: {
         tokens: {
             colors: {
-                "pickme-primary": generateColorScale("--pickme-color-primary"),
-                "pickme-secondary": generateColorScale("--pickme-color-secondary"),
-                "pickme-tertiary": generateColorScale("--pickme-color-tertiary"),
+                "pickme-primary": createShadeMapping("--pickme-color-primary"),
+                "pickme-secondary": createShadeMapping("--pickme-color-secondary"),
+                "pickme-tertiary": createShadeMapping("--pickme-color-tertiary"),
             },
         },
         semanticTokens: {
@@ -24,26 +24,25 @@ const config = defineConfig({
 
 export default createSystem(defaultConfig, config);
 
-// 색상 스케일(50~950) 생성 함수
-function generateColorScale(color) {
-    const token_keys = ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"];
-    // CSS 변수를 사용하여 색상 코드 가져오기
+// CSS 변수를 가져오는 함수
+function getCSSVariable(variable: string) {
     const root = document.documentElement;
-    const code = getComputedStyle(root).getPropertyValue(color);
-    const hsl = new Hex(code).to_hsl();
-    // 색상 스케일 생성
-    const shades = token_keys
-        .map((key) => (key - 500) / 10)
-        .map(adjustLightness(hsl))
-        .map((adjusted_hsl) => adjusted_hsl.to_rgb().to_hex().toString());
+    return getComputedStyle(root).getPropertyValue(variable).trim() as `#${string}`;
+}
 
-    return zip(token_keys, shades)
-        .map(([key, shade]) => ({ [key]: { value: shade } }))
+// 색상 스케일을 생성하는 함수
+function createShadeMapping(variable: string) {
+    const token_keys = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950];
+
+    const colorScale = generateColorScale(getCSSVariable(variable), token_keys);
+
+    return zip(token_keys, colorScale)
+        .map(([key, shade]) => ({ [key]: { value: shade.toString() } }))
         .reduce((acc, cur) => ({ ...acc, ...cur }));
 }
 
 // 색상 시맨틱 토큰 생성 함수
-function generateColorSemantic(color) {
+function generateColorSemantic(color: string) {
     return {
         solid: { value: `{colors.${color}.500}` }, // 기본 색상
         contrast: { value: "white" }, // 대비 (글자 등)
@@ -53,9 +52,4 @@ function generateColorSemantic(color) {
         emphasized: { value: `{colors.${color}.700}` }, // 강조 색상 (활성화된 버튼 등)
         focusRing: { value: `{colors.${color}.400}` }, // 포커스 효과 색상 (입력 필드 등)
     };
-}
-
-function zip(...arrays) {
-    const length = Math.min(...arrays.map((arr) => arr.length));
-    return Array.from({ length }, (_, i) => arrays.map((arr) => arr[i]));
 }

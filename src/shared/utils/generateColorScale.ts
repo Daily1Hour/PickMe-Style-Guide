@@ -9,12 +9,13 @@ export function adjustLightness({ h, s, l }: HSL): (percentage: number) => HSL {
     };
 }
 
-// 헥사코드를 받아서 10단계의 색상을 생성
-export default function generateColorShades(code: `#${string}`): Hex[] {
-    const length = 10;
+// 색상 스케일 생성 함수
+export default function generateColorScale(code: `#${string}`, token_keys: number[]): Hex[] {
+    // CSS 변수를 사용하여 색상 코드 가져오기
     const hsl = new Hex(code).toHSL();
-
-    return Array.from({ length }, (_, index) => (length / 2 - index) * (100 / length))
+    // 색상 스케일 생성
+    return token_keys
+        .map((key) => (key - 500) / 10)
         .map(adjustLightness(hsl))
         .map(HSL.toRGB)
         .map(RGB.toHex);
