@@ -56,6 +56,11 @@ export default class RGB extends BaseModel {
         return this;
     }
 
+    /**
+     * RGB 구성 요소(빨강, 초록, 파랑)를 구조분해할 수 있도록 합니다.
+     *
+     * @returns RGB 구성 요소에 대한 이터레이터.
+     */
     [Symbol.iterator](): Iterator<number> {
         return [this.r, this.g, this.b][Symbol.iterator]();
     }

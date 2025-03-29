@@ -4,7 +4,7 @@ import RGB from "./RGB";
 
 export default class Hex extends BaseModel {
     /**
-     * @param code - hex code(헥스 코드) #000000-#ffffff
+     * @param code - hex code(헥스 코드) #RRGGBB 형태로 입력
      */
     constructor(public code: `#${string}`) {
         super();

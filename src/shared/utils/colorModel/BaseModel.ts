@@ -8,6 +8,10 @@ export interface IColorModel {
     toHSL(): HSL;
 };
 
+/**
+ * 색상 모델을 Hex, RGB, HSL과 같은 다양한 형식으로 변환하기 위한
+ * 정적 유틸리티 메서드를 제공하는 기본 모델 클래스입니다.
+ */
 export default abstract class BaseModel implements IColorModel {
     abstract toHex(): Hex;
     abstract toRGB(): RGB;
