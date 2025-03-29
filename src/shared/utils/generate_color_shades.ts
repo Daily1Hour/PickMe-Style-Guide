@@ -1,4 +1,4 @@
-class Hex {
+export class Hex {
     /**
      * @param code - hex code(헥스 코드) #000000-#ffffff
      */
@@ -21,7 +21,7 @@ class Hex {
     }
 }
 
-class RGB {
+export class RGB {
     /**
      * @param r - red(빨강) 0-255
      * @param g - green(초록) 0-255
@@ -78,7 +78,7 @@ class RGB {
     }
 }
 
-class HSL {
+export class HSL {
     /**
      * @param h - hue(색상) 0-360
      * @param s - saturation(채도) 0-100

@@ -1,5 +1,7 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
+import { adjust_lightness, Hex } from "../shared/utils/generate_color_shades";
+
 const config = defineConfig({
     theme: {
         tokens: {
@@ -23,19 +25,20 @@ export default createSystem(defaultConfig, config);
 
 // 색상 스케일(50~950) 생성 함수
 function generateColorScale(color) {
-    return {
-        50: { value: `color-mix(in srgb, white 90%, var(${color}))` },
-        100: { value: `color-mix(in srgb, white 70%, var(${color}))` },
-        200: { value: `color-mix(in srgb, white 50%, var(${color}))` },
-        300: { value: `color-mix(in srgb, white 30%, var(${color}))` },
-        400: { value: `color-mix(in srgb, white 10%, var(${color}))` },
-        500: { value: `var(${color})` },
-        600: { value: `color-mix(in srgb, black 10%, var(${color}))` },
-        700: { value: `color-mix(in srgb, black 20%, var(${color}))` },
-        800: { value: `color-mix(in srgb, black 30%, var(${color}))` },
-        900: { value: `color-mix(in srgb, black 40%, var(${color}))` },
-        950: { value: `color-mix(in srgb, black 50%, var(${color}))` },
-    };
+    const token_keys = ["50", "100", "200", "300", "400", "500", "600", "700", "800", "900", "950"];
+    // CSS 변수를 사용하여 색상 코드 가져오기
+    const root = document.documentElement;
+    const code = getComputedStyle(root).getPropertyValue(color);
+    const hsl = new Hex(code).to_hsl();
+    // 색상 스케일 생성
+    const shades = token_keys
+        .map((key) => (key - 500) / 10)
+        .map(adjust_lightness(hsl))
+        .map((adjusted_hsl) => adjusted_hsl.to_rgb().to_hex().toString());
+
+    return zip(token_keys, shades)
+        .map(([key, shade]) => ({ [key]: { value: shade } }))
+        .reduce((acc, cur) => ({ ...acc, ...cur }));
 }
 
 // 색상 시맨틱 토큰 생성 함수
@@ -49,4 +52,9 @@ function generateColorSemantic(color) {
         emphasized: { value: `{colors.${color}.700}` }, // 강조 색상 (활성화된 버튼 등)
         focusRing: { value: `{colors.${color}.400}` }, // 포커스 효과 색상 (입력 필드 등)
     };
+}
+
+function zip(...arrays) {
+    const length = Math.min(...arrays.map((arr) => arr.length));
+    return Array.from({ length }, (_, i) => arrays.map((arr) => arr[i]));
 }
