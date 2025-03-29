@@ -1,8 +1,28 @@
-export class Hex {
+type M = {
+    to_hex(): Hex;
+    to_rgb(): RGB;
+    to_hsl(): HSL;
+};
+
+class BaseModel {
+    static to_hex<T extends M>(model: T): Hex {
+        return model.to_hex();
+    }
+    static to_rgb<T extends M>(model: T): RGB {
+        return model.to_rgb();
+    }
+    static to_hsl<T extends M>(model: T): HSL {
+        return model.to_hsl();
+    }
+}
+
+export class Hex extends BaseModel {
     /**
      * @param code - hex code(헥스 코드) #000000-#ffffff
      */
-    constructor(public code: `#${string}`) {}
+    constructor(public code: `#${string}`) {
+        super();
+    }
 
     public to_rgb(): RGB {
         return new RGB(
@@ -16,18 +36,24 @@ export class Hex {
         return this.to_rgb().to_hsl();
     }
 
+    public to_hex(): Hex {
+        return this;
+    }
+
     public toString(): string {
         return this.code;
     }
 }
 
-export class RGB {
+export class RGB extends BaseModel {
     /**
      * @param r - red(빨강) 0-255
      * @param g - green(초록) 0-255
      * @param b - blue(파랑) 0-255
      */
-    constructor(public r: number, public g: number, public b: number) {}
+    constructor(public r: number, public g: number, public b: number) {
+        super();
+    }
 
     public to_hex(): Hex {
         return new Hex(
@@ -69,22 +95,24 @@ export class RGB {
         return new HSL(h, s, l);
     }
 
+    public to_rgb(): RGB {
+        return this;
+    }
+
     [Symbol.iterator](): Iterator<number> {
         return [this.r, this.g, this.b][Symbol.iterator]();
     }
-
-    static to_hex(rgb: RGB): Hex {
-        return rgb.to_hex();
-    }
 }
 
-export class HSL {
+export class HSL extends BaseModel {
     /**
      * @param h - hue(색상) 0-360
      * @param s - saturation(채도) 0-100
      * @param l - lightness(밝기) 0-100
      */
-    constructor(public h: number, public s: number, public l: number) {}
+    constructor(public h: number, public s: number, public l: number) {
+        super();
+    }
 
     public to_rgb(): RGB {
         // chroma(채도 강도), m(보정값)
@@ -105,8 +133,12 @@ export class HSL {
         return new RGB(r, g, b);
     }
 
-    static to_rgb(hsl: HSL): RGB {
-        return hsl.to_rgb();
+    public to_hex(): Hex {
+        return this.to_rgb().to_hex();
+    }
+
+    public to_hsl(): HSL {
+        return this;
     }
 }
 
